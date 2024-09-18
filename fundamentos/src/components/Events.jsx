@@ -64,42 +64,40 @@ function MouseNaDiv() {
 }
 
 function Calculos() {
-  //Tentei declarar as variaveis com var para acessar globalmente e evitar a repetição no código usando const porém estava dando algum tipo de erro
-  function soma() {
-    const num1 = parseInt(document.querySelector("#num1").value);
-    const num2 = parseInt(document.querySelector("#num2").value);
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
 
-    alert("Operação Selecionada:Soma\n" + (num1 + num2));
+  function soma() {
+    alert(`Operação Selecionada: Soma \n Resultado: ${num1 + num2}`);
   }
 
   function subtracao() {
-    const num1 = parseInt(document.querySelector("#num1").value);
-    const num2 = parseInt(document.querySelector("#num2").value);
-
-    alert("Operação Selecionada:Subtração\n" + (num1 - num2));
+    alert(`Operação Selecionada: Subtração \n Resultado: ${num1 - num2}`);
   }
 
   function divisao() {
-    const num1 = parseInt(document.querySelector("#num1").value);
-    const num2 = parseInt(document.querySelector("#num2").value);
-
-    alert("Operação Selecionada:Divisão\n" + (num1 / num2));
+    alert(`Operação Selecionada: Divisão \n Resultado: ${num1 / num2}`);
   }
 
   function multiplicacao() {
-    const num1 = parseInt(document.querySelector("#num1").value);
-    const num2 = parseInt(document.querySelector("#num2").value);
-
-    alert("Operação Selecionada:Multiplicação\n" + (num1 * num2));
+    alert(`Operação Selecionada: Multiplicação \n Resultado: ${num1 * num2}`);
   }
 
   return (
     <div>
-      <label>Insira seu primeiro número</label>
-      <input type="number" name="num1" id="num1" />
+      <label>Insira seu primeiro número: </label>
+      <input
+        type="number"
+        value={num1}
+        onChange={(e) => setNum1(parseInt(e.target.value))}
+      />
       <br />
-      <label>Insira seu segundo número</label>
-      <input type="number" name="num2" id="num2" />
+      <label>Insira seu segundo número: </label>
+      <input
+        type="number"
+        value={num2}
+        onChange={(e) => setNum2(parseInt(e.target.value))}
+      />
       <br />
       <button onClick={soma}>Somar</button>
       <button onClick={subtracao}>Subtrair</button>
