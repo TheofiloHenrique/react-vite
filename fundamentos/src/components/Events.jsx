@@ -62,10 +62,58 @@ function MouseNaDiv() {
     </div>
   );
 }
+
+function Calculos() {
+  //Tentei declarar as variaveis com var para acessar globalmente e evitar a repetição no código usando const porém estava dando algum tipo de erro
+  function soma() {
+    const num1 = parseInt(document.querySelector("#num1").value);
+    const num2 = parseInt(document.querySelector("#num2").value);
+
+    alert("Operação Selecionada:Soma\n" + (num1 + num2));
+  }
+
+  function subtracao() {
+    const num1 = parseInt(document.querySelector("#num1").value);
+    const num2 = parseInt(document.querySelector("#num2").value);
+
+    alert("Operação Selecionada:Subtração\n" + (num1 - num2));
+  }
+
+  function divisao() {
+    const num1 = parseInt(document.querySelector("#num1").value);
+    const num2 = parseInt(document.querySelector("#num2").value);
+
+    alert("Operação Selecionada:Divisão\n" + (num1 / num2));
+  }
+
+  function multiplicacao() {
+    const num1 = parseInt(document.querySelector("#num1").value);
+    const num2 = parseInt(document.querySelector("#num2").value);
+
+    alert("Operação Selecionada:Multiplicação\n" + (num1 * num2));
+  }
+
+  return (
+    <div>
+      <label>Insira seu primeiro número</label>
+      <input type="number" name="num1" id="num1" />
+      <br />
+      <label>Insira seu segundo número</label>
+      <input type="number" name="num2" id="num2" />
+      <br />
+      <button onClick={soma}>Somar</button>
+      <button onClick={subtracao}>Subtrair</button>
+      <button onClick={divisao}>Dividir</button>
+      <button onClick={multiplicacao}>Multiplicar</button>
+    </div>
+  );
+}
+
 export {
   ClickButton,
   KeyDownComponent,
   InputField,
   FocusBlurComponent,
   MouseNaDiv,
+  Calculos,
 };

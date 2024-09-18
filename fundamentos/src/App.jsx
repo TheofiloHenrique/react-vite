@@ -8,6 +8,7 @@ import {
   InputField,
   FocusBlurComponent,
   MouseNaDiv,
+  Calculos,
 } from "./components/Events";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <InputField />
       <FocusBlurComponent />
       <MouseNaDiv />
+      <Calculos />
     </>
   );
 }
