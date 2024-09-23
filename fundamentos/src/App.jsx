@@ -9,12 +9,16 @@ import {
   FocusBlurComponent,
   MouseNaDiv,
   Calculos,
+  SimpleForm,
 } from "./components/Events";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   return (
     <>
-      <Cabeça />
+      <SimpleForm />
+      {/* <Cabeça />
+      <UserDetails />
       <Meio />
       <Pe />
       <ClickButton />
@@ -22,7 +26,7 @@ function App() {
       <InputField />
       <FocusBlurComponent />
       <MouseNaDiv />
-      <Calculos />
+      <Calculos /> */}
     </>
   );
 }

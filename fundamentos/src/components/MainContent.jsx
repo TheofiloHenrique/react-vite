@@ -1,7 +1,7 @@
 import SideBar from "./SideBar";
 import Article from "./Article";
 
-const MainContent = () => {
+const MainContent = (props) => {
   function horario() {
     const hora = new Date().getHours();
 
@@ -14,6 +14,9 @@ const MainContent = () => {
     <main>
       <div>
         <h1>Meu Componente Main!</h1>
+        <h2>
+          Olá {props.name} Idade: {props.idade}
+        </h2>
         <p>A soma de dois mais dois é : {2 + 2}</p>
         <h2>{horario()}</h2>
       </div>

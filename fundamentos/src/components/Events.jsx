@@ -106,6 +106,50 @@ function Calculos() {
     </div>
   );
 }
+function SimpleForm() {
+  // Definindo o estado para armazenar o valor do campo de entrada
+  const [name, setName] = useState("");
+  const [idade, setIdade] = useState(0);
+
+  // Função que será chamada sempre que o valor do input mudar
+  const handleInputChange = (event) => {
+    setName(event.target.value); // Atualiza o estado com o valor do input
+  };
+
+  const handleIdadeChange = (event) => {
+    setIdade(event.target.value); // Atualiza o estado com o valor do input
+  };
+
+  // Função chamada quando o formulário for submetido
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Evita o comportamento padrão de recarregar a página
+    if (name == "") return alert("Insira um nome mula!");
+    if (idade < 6)
+      return alert(
+        `${name}, acredito que com ${idade} anos você não sabe escrever nem ler mula, sai do fake kkkk`
+      );
+
+    alert(`Nome: ${name} \nIdade: ${idade} anos`);
+    setName("");
+    setIdade("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nome:
+        <input type="text" value={name} onChange={handleInputChange} />
+      </label>
+      <br />
+      <label>
+        Idade:
+        <input type="number" value={idade} onChange={handleIdadeChange} />
+      </label>
+      <br />
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}
 
 export {
   ClickButton,
@@ -114,4 +158,5 @@ export {
   FocusBlurComponent,
   MouseNaDiv,
   Calculos,
+  SimpleForm,
 };
